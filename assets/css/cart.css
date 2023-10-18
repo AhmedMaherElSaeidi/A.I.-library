@@ -1,0 +1,112 @@
+.cart-page {
+  padding: 4em;
+}
+.text-wb {
+  color: white;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+main > table {
+  width: 100%;
+  border-collapse: collapse;
+}
+main > table > thead > tr {
+  border-radius: 0.1em;
+}
+main > table:first-child th {
+  color: white;
+  text-align: left;
+  padding: 0.25em 1.5em;
+  background: #d9821f;
+}
+main > table:first-child th:first-child {
+  border-top-left-radius: 0.2em;
+}
+main > table:first-child th:nth-child(2) {
+  border-bottom-right-radius: 0.2em;
+}
+main > table:first-child tbody > .empty-row {
+  background-color: #f1f1f1b7;
+  margin-bottom: 1em;
+}
+main > table:first-child tbody > .empty-row > td {
+  text-align: center !important;
+}
+main > table:first-child tr > td {
+  padding: 0.5em;
+}
+main > table:first-child tr > td .card {
+  width: 40em;
+  border: none;
+  display: flex;
+  flex-direction: row;
+}
+main > table:first-child tr > td .card img {
+  height: 18em;
+  width: 15em;
+}
+main > table:first-child tr > td .card .card-body {
+  display: flex;
+  flex-direction: column;
+}
+main > table:first-child tr > td .card .card-body p {
+  margin-bottom: 0.25em;
+}
+main > table:first-child tr > td .card .card-body hr {
+  margin: 0.5em 0em;
+}
+main > table:first-child tr > td:nth-child(2) > section > input:nth-child(2) {
+  width: 40%;
+  height: 25%;
+  float: right;
+}
+main > table:nth-child(2) {
+  width: 100%;
+  max-width: 15em;
+  margin-top: 0.5em;
+  border-top: 0.25em solid #d9821f;
+}
+main > table td:last-child,
+main > table th:last-child {
+  text-align: right;
+}
+
+@media screen and (max-width: 900px) {
+  main > table:first-child tr > td .card {
+    width: 30em;
+  }
+}
+
+@media screen and (max-width: 720px) {
+  main > table:first-child tr > td .card {
+    width: 15em;
+    flex-direction: column;
+  }
+  main > table:first-child tr > td .card img {
+    height: 18em;
+    width: 15em;
+  }
+}
+@media screen and (max-width: 650px) {
+  main > table:first-child th {
+    padding: 0.1em 0.5em;
+  }
+  main > table:first-child tr > td .card {
+    width: 12em;
+    flex-direction: column;
+  }
+  main > table:first-child tr > td h5 {
+    font-size: 0.9rem !important;
+  }
+  main > table:first-child tr > td .card img {
+    height: 15em;
+    width: 12em;
+  }
+  main > table:first-child tr > td:nth-child(2) > section > input:nth-child(2) {
+    width: 100%;
+  }
+}

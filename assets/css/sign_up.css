@@ -1,0 +1,88 @@
+a:hover {
+  text-decoration: underline;
+  color: white;
+}
+input {
+  text-align: center;
+}
+.form-check-input:checked {
+  background-color: gold;
+  border-color: gold;
+}
+
+.form-control:focus,
+.form-check-input:focus {
+  box-shadow: 0 0 0 0.25rem #fdd20040;
+}
+
+main .signup-header {
+  width: 100%;
+  display: flex;
+  padding: 0.5em;
+  justify-content: start;
+}
+main .signup-header img {
+  width: 4em;
+  height: 4em;
+  border-radius: 50%;
+  margin-right: 0.25em;
+}
+main .signup-header h1 {
+  font-size: 1.5em;
+}
+
+main .signup-body {
+  width: 30%;
+  padding: 0.5em;
+  margin-top: 7em;
+  border-radius: 0.15em;
+  background-color: #ffd90027;
+  box-shadow: 0 0 0 0.1em #fdd30078;
+}
+main .signup-body > form > .name-section > input:first-child {
+  margin-right: 0.25em;
+}
+main .signup-body > form > .passwod-section {
+  position: relative;
+}
+main .signup-body > form > .passwod-section > i {
+  position: absolute;
+  top: 0.7em;
+  right: 1em;
+  opacity: 50%;
+}
+main .signup-body > form > .passwod-section > i:hover {
+  opacity: 100%;
+  cursor: pointer;
+}
+main .signup-body > form > .submit-section {
+  display: flex;
+  margin-top: 0.5em;
+  align-items: center;
+  flex-direction: column;
+  text-wrap: nowrap !important;
+}
+main .signup-body > form > .submit-section > button {
+  width: 15em;
+}
+
+@media screen and (max-width: 960px) {
+  main .signup-body {
+    width: 50%;
+    margin-bottom: 4em;
+  }
+}
+@media screen and (max-width: 720px) {
+  main .signup-body {
+    width: 70%;
+    margin-top: 4em;
+    margin-bottom: 4em;
+  }
+}
+@media screen and (max-width: 420px) {
+  main .signup-body {
+    width: 90%;
+    margin-top: 4em;
+    margin-bottom: 4em;
+  }
+}

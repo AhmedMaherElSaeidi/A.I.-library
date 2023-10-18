@@ -1,0 +1,156 @@
+.td-underline {
+  text-decoration: underline;
+}
+
+main .main-navbar {
+  width: 100%;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.25em;
+  justify-content: center;
+  background-color: #f1f1f1b7;
+}
+main .main-navbar > a > p {
+  margin-bottom: 0em;
+}
+main .main-navbar > a {
+  color: #003da7 !important;
+  margin-right: 0.5em;
+  padding-right: 0.5em;
+}
+main .main-navbar > a:not(:last-child) {
+  border-right: 1px solid black;
+}
+main .main-navbar > a:hover {
+  opacity: 80%;
+  cursor: pointer;
+  text-decoration: underline;
+}
+main .parent-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Form */
+main .parent-section > .child-form {
+  width: 40%;
+  padding: 0.5em;
+  margin: 1em 0em;
+  border-radius: 0.15em;
+  background-color: #ffffff9a;
+}
+main .parent-section > .child-form > form input,
+main .parent-section > .child-form > form textarea,
+main .parent-section > .child-form > form select {
+  box-shadow: none;
+}
+main .parent-section > .child-form > form > .cost-section,
+main .parent-section > .child-form > form > .cover-section,
+main .parent-section > .child-form > form > .author-section {
+  display: flex;
+}
+main .parent-section > .child-form > form > .cost-section :first-child,
+main .parent-section > .child-form > form > .author-section :first-child {
+  margin-right: 0.25em;
+}
+main .parent-section > .child-form > form > .cover-section > img {
+  height: 8em;
+  width: 10em;
+  margin-right: 0.25em;
+  border-radius: 0.25em;
+}
+main .parent-section > .child-form > form > .cover-section > input {
+  align-self: start;
+}
+main
+  .parent-section
+  > .child-form
+  > form
+  > .author-section
+  > section:first-child,
+main
+  .parent-section
+  > .child-form
+  > form
+  > .cost-section
+  > section:first-child {
+  margin-right: 0.25em;
+  width: 60%;
+}
+main
+  .parent-section
+  > .child-form
+  > form
+  > .author-section
+  > section:nth-child(2),
+main
+  .parent-section
+  > .child-form
+  > form
+  > .cost-section
+  > section:nth-child(2) {
+  width: 100%;
+}
+main .parent-section > .child-form > form > .submit-section {
+  display: flex;
+  justify-content: center;
+}
+main .parent-section > .child-form > form > .submit-section > button {
+  width: 10em;
+}
+
+/* Table */
+main .parent-section > .child-table > table {
+  margin: 1em 0em;
+}
+main .parent-section > .child-table > table > tbody > tr > td:last-child {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media screen and (max-width: 960px) {
+  main .parent-section > .child-form {
+    width: 50%;
+    margin-bottom: 4em;
+  }
+}
+@media screen and (max-width: 720px) {
+  main .main-navbar {
+    height: 3rem;
+  }
+  main .main-navbar > a {
+    margin-right: 0.25em;
+    padding-right: 0.25em;
+    font-size: 0.9em;
+  }
+  main .parent-section > .child-form {
+    width: 70%;
+    margin-top: 4em;
+    margin-bottom: 4em;
+  }
+  main .parent-section > .child-table > table {
+    display: none;
+  }
+}
+@media screen and (max-width: 420px) {
+  main .parent-section > .child-form form .txt-small {
+    font-size: 0.9em;
+  }
+  main .main-navbar {
+    height: 3rem;
+  }
+  main .main-navbar > a {
+    margin-right: 0.25em;
+    padding-right: 0.25em;
+    font-size: 0.7em;
+  }
+  main .parent-section > .child-form {
+    width: 90%;
+    margin-top: 4em;
+    margin-bottom: 4em;
+  }
+}

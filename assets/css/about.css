@@ -1,0 +1,15 @@
+main > section {
+  width: 80%;
+  margin-bottom: 1em;
+}
+main > section:first-child > h1 {
+  padding: 0.5rem;
+  font-size: 4em;
+  text-wrap: nowrap;
+  font-family: forte;
+  text-align: center;
+}
+main > section:first-child {
+  border-bottom: 1px solid gold;
+  border-bottom-width: 80%;
+}

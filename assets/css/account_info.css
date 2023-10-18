@@ -1,0 +1,25 @@
+.account-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.account-info {
+  border: 1px solid #ccc;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 0.25em;
+}
+.account-info > img {
+  height: 10em;
+  width: 10em;
+  border-radius: 0.25em;
+}
+.info-label {
+  font-weight: bold;
+}
+form .name-section {
+  display: flex;
+}
+form .name-section > section:first-child {
+  margin-right: 0.25em;
+}

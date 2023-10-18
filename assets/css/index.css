@@ -1,0 +1,230 @@
+body {
+  margin: 0px;
+  padding: 0px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.index-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/rafael-m-CTNHIGI2WcU-unsplash.jpg);
+}
+.about-background {
+  background-image: linear-gradient(#0000008c, #0000008c),
+    url(../images/clark-young-QdRnZlzYJPA-unsplash.jpg);
+}
+.cart-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/library10.jpg);
+}
+.signin-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/library1.jpg);
+  background-size: cover;
+  filter: brightness(85%);
+}
+.signup-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../images/library9.jpg);
+  background-size: cover;
+  filter: brightness(85%);
+}
+.settings-background {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../assets/images/library3.jpg);
+}
+
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: white !important;
+}
+
+.txt-gold,
+.active {
+  color: gold !important;
+}
+
+nav {
+  background-color: black !important;
+}
+nav .profile-section,
+nav .profile-section > section {
+  display: flex;
+  color: white;
+  align-items: center;
+  flex-direction: row;
+}
+nav .profile-section > img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 50%;
+  margin-right: 0.25em;
+  border: 1px solid gold;
+}
+nav .profile-section > section {
+  display: none;
+}
+nav .profile-section:hover section {
+  display: block;
+  cursor: pointer;
+  animation: show-up 0.5s linear;
+}
+nav .profile-section > section > p {
+  margin: 0em;
+}
+nav .navbar-brand img {
+  width: 1.5em;
+  border-radius: 0.25em;
+}
+nav .dropdown-menu-dark {
+  background-color: black !important;
+}
+nav .dropdown-item:hover,
+nav .nav-link:hover,
+nav i:hover {
+  color: gold !important;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main .home-view {
+  width: 100%;
+  height: 8rem;
+  margin-bottom: 0.5em;
+  background-color: #f1f1f1b7;
+}
+main .home-view > section:first-child {
+  padding: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main .home-view > section:first-child > form {
+  width: 80%;
+}
+main .home-view > section:first-child > form input {
+  border-radius: 0.4em;
+}
+main .home-view > section:first-child > form input:focus {
+  border: none;
+}
+main .home-view > section:first-child > form button {
+  width: 5em;
+  border-radius: 0.4em;
+}
+main .home-view > section:first-child > form button:hover {
+  color: gold;
+  border: 1px solid gold;
+}
+main .home-view > section:first-child > form button:focus {
+  box-shadow: none;
+}
+main .home-view > section:first-child > form .form-control:focus {
+  box-shadow: unset;
+}
+.signin-section-text {
+  margin: 0px auto;
+  padding: 3px 0px;
+  width: 75%;
+  display: block;
+  text-align: center;
+  position: relative;
+}
+main .signin-section-text a {
+  text-decoration: underline;
+  color: black !important;
+}
+main .signin-section-text a:hover {
+  color: blue !important;
+  cursor: pointer;
+  opacity: 80%;
+}
+
+main .books-grid {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+main .books-grid .book-card {
+  width: 17em;
+  margin: 0.5em;
+  flex: 0 0 auto;
+  border-radius: 0.23em;
+  background-color: #f1f1f1ad;
+}
+main .books-grid .book-card .card-text {
+  margin-bottom: 0.1em;
+}
+main .books-grid .book-card hr {
+  margin: 0.5rem 0;
+}
+main .books-grid .book-card .book-cover {
+  position: relative;
+}
+main .books-grid .book-card .book-cover > img {
+  height: 22em;
+  width: 100%;
+}
+main .books-grid .book-card .book-cover > .overlay > .overlay-btns > * {
+  float: left;
+  margin-right: 0.4em;
+}
+main .books-grid .book-card .book-cover > .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #00000090;
+  color: #fff;
+  padding: 0.5em;
+  opacity: 0;
+  transition: opacity 0.7s;
+}
+main .books-grid .book-card .book-cover:hover .overlay {
+  opacity: 1;
+}
+main .books-grid .book-card .card-body {
+  padding: 0.5em;
+}
+main .no-book-found {
+  background-color: #f1f1f1b7;
+  border-radius: 0.25em;
+  padding: 1em;
+  margin: 2em;
+}
+
+@keyframes flash {
+  from {
+    filter: brightness(200%);
+  }
+  to {
+    filter: brightness(100%);
+  }
+}
+
+@keyframes show-up {
+  from {
+    opacity: 40%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  nav .profile-section > section {
+    display: block;
+  }
+}
