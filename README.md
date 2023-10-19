@@ -2,9 +2,9 @@
 
 ## Overview
 
-The Library Management System is a comprehensive web-based application that enables users to efficiently manage a library's collection of books. This system was developed using HTML, CSS, JavaScript for the front-end, and PHP and SQL for the back-end. It caters to different user roles, providing a rich set of features for both library staff and patrons.
-The A.I. stands for Ahmed & Ibrahim the developers of the website and on that basis our logo was founded.
-The library passed by two core proccesses, the first process was the implementation of the front-end using html & css and that was at my first year at college, and the second proccess was introducing the website in a dynamic way by adding back-end using PHP and SQl.
+- The Library Management System is a comprehensive web-based application that enables users to manage a library's collection of books efficiently. This system was developed using HTML, CSS, JavaScript for the front end, and PHP and SQL for the back end. It caters to different user roles, providing a rich set of features for both library staff and patrons.
+- The A.I. stands for Ahmed & Ibrahim the developers of the website and on that basis, our logo was founded.
+- The library passed through two core processes, the first process was the implementation of the front-end using HTML & and CSS which was in my first year at college, and the second process was introducing the website in a dynamic way by adding a back-end using PHP and SQL which was one year later in an ITI internship.
 
 ## Features
 
@@ -22,7 +22,7 @@ The library passed by two core proccesses, the first process was the implementat
 
 - **User Management**: Admins can list user accounts and view the contents of user carts, providing essential administrative control.
 
-- **Book Management**: Admins can add new books to the library's collection, update existing book information, and delete books as needed.
+- **Book Management**: Admins can add new books to the library's collection, update existing book, and delete books as needed.
 
 ### Account Deletion:
 
