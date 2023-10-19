@@ -41,9 +41,9 @@
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 1](./assets/images/screencapture-localhost-Library-2023-10-19-03_08_12.png)
 
-![Screenshot 2](screenshots/screenshot2.png)
+![Screenshot 2](./assets/images/screencapture-localhost-Library-views-account-info-php-2023-10-19-03_08_41.png)
 
 ## Installation
 
