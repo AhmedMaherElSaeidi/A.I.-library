@@ -72,8 +72,8 @@ if ($is_admin) { ?>
               <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
                 <?php if ($is_loggedin) { ?>
                   <li><a class="dropdown-item" href="./account_info.php">
-                    <i class="fas fa-user-circle"></i> User Account</a>
-                </li>
+                      <i class="fas fa-user-circle"></i> User Account</a>
+                  </li>
                   <li><a class="dropdown-item" href="../controller/auth/logout.php"><i class="fas fa-sign-out-alt"></i>
                       Logout</a></li>
                 <?php } else { ?>
@@ -91,17 +91,19 @@ if ($is_admin) { ?>
               <a class="nav-link" aria-current="page" href="./aboutus.php">About Us</a>
             </li>
           </ul>
-          <section class="profile-section">
-          <img
-            src="../assets/images/uploads/<?php echo $_SESSION['user_profile'] != 'null' ? $_SESSION['user_profile'] : "default-profile.jpg" ?>"
-            alt="">
-          <section>
-            <p><a href="./account_info.php">
-                <?php echo $_SESSION['fullname']; ?>
-              </a></p>
-          </section>
+          <?php if ($is_loggedin) { ?>
+            <section class="profile-section">
+              <img
+                src="../assets/images/uploads/<?php echo $_SESSION['user_profile'] != 'null' ? $_SESSION['user_profile'] : "default-profile.jpg" ?>"
+                alt="">
+              <section>
+                <p><a href="./account_info.php">
+                    <?php echo $_SESSION['fullname']; ?>
+                  </a></p>
+              </section>
+            </section>
+          <?php } ?>
         </section>
-      </section>
     </nav>
 
     <main>
@@ -117,97 +119,98 @@ if ($is_admin) { ?>
         </a>
       </section>
       <section class="parent-section">
-          <!-- Update Book -->
-          <?php if ($is_view_set && $_GET['view'] == 0) {
-            $book_id = $_GET['book_id'];
-            $book = $orm->select('book', "book_id={$book_id}", True); ?>
-            <section class="child-form" id="0">
-              <?php if (count($book) != 1) { ?>
-                <p class="text-center text-danger">
-                  <?php echo "Book Not Found"; ?>
-                </p>
-              <?php } else { ?>
+        <!-- Update Book -->
+        <?php if ($is_view_set && $_GET['view'] == 0) {
+          $book_id = $_GET['book_id'];
+          $book = $orm->select('book', "book_id={$book_id}", True); ?>
+          <section class="child-form" id="0">
+            <?php if (count($book) != 1) { ?>
+              <p class="text-center text-danger">
+                <?php echo "Book Not Found"; ?>
+              </p>
+            <?php } else { ?>
 
-                <form class="form" action="../controller/book/update_book.php" method="post" enctype="multipart/form-data">
-                  <input type="hidden" name="book_id" value="<?php echo $book[0]['book_id']; ?>">
-                  <input type="hidden" name="book_cover" value="<?php echo $book[0]['book_cover']; ?>">
-                  <section class="mb-3">
-                    <label class="txt-small" for="book_name">Book name</label>
-                    <input type="text" name="book_name" id="book_name" value="<?php echo $book[0]['book_name']; ?>" class="form-control mb-3" placeholder="book name" required>
-                    <label class="txt-small" for="book_url">Book url</label>
-                    <input type="text" name="book_url" id="book_url" value="<?php echo $book[0]['book_url']; ?>"
-                      class="form-control" placeholder="book url" required>
-                  </section>
-                  <section class="mb-3 author-section">
-                    <section>
-                      <label class="txt-small" for="author_id">Author name</label>
-                      <select name="author_id" id="author_id" class="form-select" required>
-                        <?php
-                        foreach ($orm->select('author') as $author) { ?>
-                          <option value="<?php echo $author['author_id']; ?>" <?php if ($book[0]['author_id'] == $author['author_id']) { ?>selected<?php } ?>>
-                            <?php echo $author['author_name']; ?>
-                          </option>
-                        <?php } ?>
-                      </select>
-                    </section>
-                    <section>
-                      <label class="txt-small" for="book_language">Book language</label>
-                      <select name="book_language" id="book_language" class="form-select" required>
-                        <?php
-                        foreach (['ar', 'en'] as $language) { ?>
-                          <option value="<?php echo $language; ?>" <?php if ($book[0]['book_language'] == $language) { ?> selected
-                            <?php } ?>>
-                            <?php echo $language; ?>
-                          </option>
-                        <?php } ?>
-                      </select>
-                    </section>
-                  </section>
-                  <section class="mb-3">
-                    <label class="txt-small" for="category">Category</label>
-                    <select name="category" id="category" class="form-select" required>
+              <form class="form" action="../controller/book/update_book.php" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="book_id" value="<?php echo $book[0]['book_id']; ?>">
+                <input type="hidden" name="book_cover" value="<?php echo $book[0]['book_cover']; ?>">
+                <section class="mb-3">
+                  <label class="txt-small" for="book_name">Book name</label>
+                  <input type="text" name="book_name" id="book_name" value="<?php echo $book[0]['book_name']; ?>"
+                    class="form-control mb-3" placeholder="book name" required>
+                  <label class="txt-small" for="book_url">Book url</label>
+                  <input type="text" name="book_url" id="book_url" value="<?php echo $book[0]['book_url']; ?>"
+                    class="form-control" placeholder="book url" required>
+                </section>
+                <section class="mb-3 author-section">
+                  <section>
+                    <label class="txt-small" for="author_id">Author name</label>
+                    <select name="author_id" id="author_id" class="form-select" required>
                       <?php
-                      foreach ($orm->select('category') as $category) { ?>
-                        <option value="<?php echo $category['category_id']; ?>" <?php if ($book[0]['category_id'] == $category['category_id']) { ?>selected<?php } ?>>
-                          <?php echo $category['category']; ?>
+                      foreach ($orm->select('author') as $author) { ?>
+                        <option value="<?php echo $author['author_id']; ?>" <?php if ($book[0]['author_id'] == $author['author_id']) { ?>selected<?php } ?>>
+                          <?php echo $author['author_name']; ?>
                         </option>
                       <?php } ?>
                     </select>
                   </section>
-                  <section class="mb-3 cost-section">
-                    <section>
-                      <label class="txt-small" for="cost">Cost</label>
-                      <input type="number" name="cost" id="cost" class="form-control" value=<?php echo $book[0]['cost']; ?>
-                        placeholder="cost" min="1" max="1000" required>
-                    </section>
-                    <section>
-                      <label class="txt-small" for="currency">Currency</label>
-                      <select name="currency" id="currency" class="form-select" required>
-                        <?php
-                        foreach (['USD', 'EGP'] as $currency) { ?>
-                          <option value="<?php echo $currency; ?>" <?php if($book[0]['currency'] == $currency){?> selected <?php }?>>
-                            <?php echo $currency; ?>
-                          </option>
-                        <?php } ?>
-                      </select>
-                    </section>
+                  <section>
+                    <label class="txt-small" for="book_language">Book language</label>
+                    <select name="book_language" id="book_language" class="form-select" required>
+                      <?php
+                      foreach (['ar', 'en'] as $language) { ?>
+                        <option value="<?php echo $language; ?>" <?php if ($book[0]['book_language'] == $language) { ?> selected
+                          <?php } ?>>
+                          <?php echo $language; ?>
+                        </option>
+                      <?php } ?>
+                    </select>
                   </section>
-                  <section class="mb-3">
-                    <label class="txt-small" for="book_description">Book description</label>
-                    <textarea class="form-control" id="book_description" name="book_description" placeholder="description"
-                      cols="30" rows="5"><?php echo $book[0]['book_description']; ?></textarea>
+                </section>
+                <section class="mb-3">
+                  <label class="txt-small" for="category">Category</label>
+                  <select name="category" id="category" class="form-select" required>
+                    <?php
+                    foreach ($orm->select('category') as $category) { ?>
+                      <option value="<?php echo $category['category_id']; ?>" <?php if ($book[0]['category_id'] == $category['category_id']) { ?>selected<?php } ?>>
+                        <?php echo $category['category']; ?>
+                      </option>
+                    <?php } ?>
+                  </select>
+                </section>
+                <section class="mb-3 cost-section">
+                  <section>
+                    <label class="txt-small" for="cost">Cost</label>
+                    <input type="number" name="cost" id="cost" class="form-control" value=<?php echo $book[0]['cost']; ?>
+                      placeholder="cost" min="1" max="1000" required>
                   </section>
-                  <section class="mb-3 cover-section">
-                    <img src="<?php echo "../assets/images/uploads/{$book[0]['book_cover']}"; ?>"
-                      alt="<?php echo $book[0]['book_cover']; ?>">
-                    <input type="file" name="book_cover" class="form-control">
+                  <section>
+                    <label class="txt-small" for="currency">Currency</label>
+                    <select name="currency" id="currency" class="form-select" required>
+                      <?php
+                      foreach (['USD', 'EGP'] as $currency) { ?>
+                        <option value="<?= $currency; ?>" <?= ($book[0]['currency'] == $currency) ? 'selected' : ''; ?>>
+                          <?= $currency; ?>
+                        </option>
+                      <?php } ?>
+                    </select>
                   </section>
-                  <section class="submit-section">
-                    <button type="submit" name="submit" class="btn btn-success">Submit</button>
-                  </section>
-                </form>
-              <?php }
-          } ?>
+                </section>
+                <section class="mb-3">
+                  <label class="txt-small" for="book_description">Book description</label>
+                  <textarea class="form-control" id="book_description" name="book_description" placeholder="description"
+                    cols="30" rows="5"><?php echo $book[0]['book_description']; ?></textarea>
+                </section>
+                <section class="mb-3 cover-section">
+                  <img src="<?php echo "../assets/images/uploads/{$book[0]['book_cover']}"; ?>"
+                    alt="<?php echo $book[0]['book_cover']; ?>">
+                  <input type="file" name="book_cover" class="form-control">
+                </section>
+                <section class="submit-section">
+                  <button type="submit" name="submit" class="btn btn-success">Submit</button>
+                </section>
+              </form>
+            <?php }
+        } ?>
 
           <!-- Add Book -->
           <?php if ($is_view_set && $_GET['view'] == 1) { ?>
@@ -302,8 +305,9 @@ if ($is_admin) { ?>
                         <?php echo $cart['book_language']; ?>
                       </td>
                       <td>
-                        <a href="../controller/cart/remove_cart.php?url=settings&params=view=2&cart_id=<?php echo $cart['cart_id']; ?>">
-                        <i class="fas fa-trash text-danger"></i></a>
+                        <a
+                          href="../controller/cart/remove_cart.php?url=settings&params=view=2&cart_id=<?php echo $cart['cart_id']; ?>">
+                          <i class="fas fa-trash text-danger"></i></a>
                       </td>
                     </tr>
                   <?php } ?>
@@ -353,8 +357,10 @@ if ($is_admin) { ?>
                         <?php echo $user['role']; ?>
                       </td>
                       <td>
-                        <a href="../controller/account/remove_account.php?url=settings&params=view=3&user_id=<?php echo $user['user_id']; ?>&user_profile=<?php echo $user['user_profile']; ?>">
-                          <i class="fas fa-trash text-danger"></i></a></td>
+                        <a
+                          href="../controller/account/remove_account.php?url=settings&params=view=3&user_id=<?php echo $user['user_id']; ?>&user_profile=<?php echo $user['user_profile']; ?>">
+                          <i class="fas fa-trash text-danger"></i></a>
+                      </td>
                     </tr>
                   <?php } ?>
                   <?php if (count($users) == 0) { ?>

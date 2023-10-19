@@ -95,15 +95,17 @@ if ($is_loggedin) { ?>
                             <a class="nav-link" aria-current="page" href="./aboutus.php">About Us</a>
                         </li>
                     </ul>
-                    <section class="profile-section">
-                        <img src="../assets/images/uploads/<?php echo $_SESSION['user_profile'] != 'null' ? $_SESSION['user_profile'] : "default-profile.jpg" ?>"
-                            alt="">
-                        <section>
-                            <p><a href="./account_info.php">
-                                    <?php echo $_SESSION['fullname']; ?>
-                                </a></p>
+                    <?php if ($is_loggedin) { ?>
+                        <section class="profile-section">
+                            <img src="../assets/images/uploads/<?php echo $_SESSION['user_profile'] != 'null' ? $_SESSION['user_profile'] : "default-profile.jpg" ?>"
+                                alt="">
+                            <section>
+                                <p><a href="./account_info.php">
+                                        <?php echo $_SESSION['fullname']; ?>
+                                    </a></p>
+                            </section>
                         </section>
-                    </section>
+                    <?php } ?>
                 </section>
         </nav>
 
