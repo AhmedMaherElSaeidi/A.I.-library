@@ -122,7 +122,7 @@ $is_index_set = isset($_GET['index']) ? True : False;
       </section>
       <?php if (!$is_loggedin) { ?>
         <section class="signin-section-text">
-          <h6>You're not logged in... <a href="views/auth/sign_in.php">log in</a></h6>
+          <h6>You're not logged in... <a href="views/sign_in.php">log in</a></h6>
         </section>
       <?php } ?>
     </section>
